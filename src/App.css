@@ -15,3 +15,8 @@
     width: 500px;
 }
 
+.inner-navigation-bar {
+    display: flex;
+    flex-direction: row;
+
+}

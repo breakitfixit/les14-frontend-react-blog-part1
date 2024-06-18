@@ -1,60 +1,35 @@
 import './App.css'
 // import logo from './assets/logo-white.png'
-import {Routes, Route, NavLink, useNavigate} from 'react-router-dom';
+import {Routes, Route, useNavigate, Link} from 'react-router-dom';
 import Home from './pages/homePage/Home.jsx';
 import NewPost from './pages/newPostPage/NewPost.jsx';
 import NotFound from './pages/notFoundPage/NotFound.jsx';
 import Overview from './pages/overviewPage/Overview.jsx';
-import logoMedium from './assets/logo-medium.png';
-import Posts from './pages/postsPage/Posts.jsx';
+import PostDetail from './pages/postDetailsPage/PostDetails.jsx'; // Importeer de component die u wilt weergeven
+// import posts from '../../constants/data.json';
+// import logoMedium from './assets/logo-medium.png';
 
 
 function App() {
     const navigate = useNavigate();
 
     return (
-        <>
+        <div className="page-container">
             <nav className="navigation-bar">
-                <div className="inner-navigation-bar">
-                    <button type={"button"} onClick={() => navigate('/')}>
-                        <img src={logoMedium} alt="logo with link to homepage"/>
-                    </button>
-                    <ul className="main-navigation">
-                        <li>
-                            <NavLink
-                                className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
-                                to="/">Home
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
-                                to="/overview">Overview
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
-                                to="/posts">
-                                Alle Posts
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
-                                to="/new">
-                                Nieuwe post maken
-                            </NavLink>
-                        </li>
-                    </ul>
-                </div>
+                <button type={"button"} onClick={() => navigate('/')}>
+                </button>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/overview">Alle posts</Link></li>
+                    <li><Link to="/new-post">Nieuwe post</Link></li>
+                </ul>
             </nav>
             <main>
-
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/overview" element={<Overview/>}/>
-                    <Route path="/posts/:id" element={<Posts/>}/>
+                    {/*<Route path="/posts/:id" element={<Posts/>}/>*/}
+                    <Route path="/overview/:id" element={<PostDetail/>}/>
                     <Route path="/new" element={<NewPost/>}/>
                     <Route path="*" element={<NotFound/>}/>
                 </Routes>
@@ -66,8 +41,8 @@ function App() {
             */}
             </main>
 
-        </>
-)
+        </div>
+    )
 }
 
 
