@@ -21,7 +21,7 @@ function App() {
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/overview">Alle posts</Link></li>
-                    <li><Link to="/new-post">Nieuwe post</Link></li>
+                    <li><Link to="/new">Nieuwe post</Link></li>
                 </ul>
             </nav>
             <main>
