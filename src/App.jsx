@@ -16,8 +16,7 @@ function App() {
     return (
         <div className="page-container">
             <nav className="navigation-bar">
-                <button type={"button"} onClick={() => navigate('/')}>
-                </button>
+                <button type={"button"} onClick={() => navigate('/')}></button>
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/overview">Alle posts</Link></li>
@@ -28,7 +27,6 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/overview" element={<Overview/>}/>
-                    {/*<Route path="/posts/:id" element={<Posts/>}/>*/}
                     <Route path="/overview/:id" element={<PostDetail/>}/>
                     <Route path="/new" element={<NewPost/>}/>
                     <Route path="*" element={<NotFound/>}/>

@@ -1,7 +1,8 @@
-export function formatDate(date) {
-    console.log(date);
-    let datetoFormat = new Date(date);
+function formatDate(date) {
+    const datetoFormat = new Date(date);
     return datetoFormat.getDate() + " "
-        + datetoFormat.toLocaleString('default', { month: 'long' })  + " "
+        + datetoFormat.toLocaleString('nl-NL', { month: 'long' }) + " "
         + datetoFormat.getFullYear();
 }
+
+export default formatDate;

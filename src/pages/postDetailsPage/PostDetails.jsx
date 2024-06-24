@@ -2,7 +2,7 @@
 import {Link, useParams } from "react-router-dom";
 import post from "../../constants/data.json";
 import overview from "../overviewPage/Overview.jsx";
-import {formatDate} from "../../helpers/DateConversion.jsx";
+import formatDate from "../../helpers/DateConversion.jsx";
 
 function PostDetails() {
     const { id } = useParams();
